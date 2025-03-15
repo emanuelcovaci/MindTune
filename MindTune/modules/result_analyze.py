@@ -20,7 +20,7 @@ def show_result_analyze():
             
             .result {
                 color: white;
-                font-size: 5em;
+                font-size: 2.5em;
                 font-weight: bold;
                 text-align: center;
                 animation: pulse 2s infinite;
@@ -68,7 +68,7 @@ def show_result_analyze():
             
             .result {
                 color: white;
-                font-size: 5em;
+                font-size: 2.5em;
                 font-weight: bold;
                 text-align: center;
                 animation: pulse 2s infinite;
