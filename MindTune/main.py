@@ -1,6 +1,6 @@
-import base64
-
+from modules.analyze import show_analyze
 from modules.home import show_home
+from modules.result_analyze import show_result_analyze
 from modules.state_detection import show_state_detection
 from modules.about_us import show_about_us
 
@@ -13,6 +13,15 @@ if 'prediction' not in st.session_state:
 st.markdown(
     """
     <style>
+    
+    body, html {
+        overflow: hidden !important;
+    }
+    
+    [data-testid="stSidebar"] {
+        overflow: hidden !important;
+    }
+    
     .stApp {
         background-color: black !important;
         color: white !important;
@@ -145,9 +154,16 @@ if st.sidebar.button("👽 State Detection"):
 if st.sidebar.button("🧑‍🤝‍🧑 About Us"):
     st.session_state.page = "about_us"
 
+
 if st.session_state["page"] == "home":
     show_home()
 elif st.session_state["page"] == "state_detection":
     show_state_detection()
 elif st.session_state["page"] == "about_us":
     show_about_us()
+elif st.session_state["page"] == "analyze":
+    show_analyze()
+elif st.session_state["page"] == "result_analyze":
+    show_result_analyze()
+# elif st.session_state["page"] == "questionnaire":
+#     show_questionnaire()

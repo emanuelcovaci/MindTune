@@ -64,7 +64,7 @@ def show_home():
             background-color: #cce5ff;
             border-radius: 15px;
             padding: 10px 15px;
-            font-size: 16px;
+            font-size: 14px;
             max-width: 60%;
             color: black;
             display: inline-block;
@@ -148,7 +148,7 @@ def show_home():
         unsafe_allow_html=True
     )
 
-    st.markdown("<h1 class='title'>Welcome to NeuroSurvey 🚀</h1>", unsafe_allow_html=True)
+    st.markdown("<h2 class='title'>Welcome to NeuroSurvey 🚀</h2>", unsafe_allow_html=True)
 
     left_container = st.empty()
     image_path = "media/robot.png"
@@ -375,5 +375,5 @@ def show_home():
 
         with st.markdown('<div class="custom-start-button">', unsafe_allow_html=True):
             if st.button("Start"):
-                st.session_state["page"] = "new_page"
+                st.session_state["page"] = "analyze"
         st.markdown('</div>', unsafe_allow_html=True)
