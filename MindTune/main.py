@@ -4,6 +4,7 @@ from modules.loading_page import show_loading_page
 from modules.result_analyze import show_result_analyze
 from modules.state_detection import show_state_detection
 from modules.about_us import show_about_us
+from modules.questionnaire import questionnaire
 
 import streamlit as st
 
@@ -190,5 +191,5 @@ elif st.session_state["page"] == "analyze":
     show_analyze()
 elif st.session_state["page"] == "result_analyze":
     show_result_analyze()
-# elif st.session_state["page"] == "questionnaire":
-#     show_questionnaire()
+elif st.session_state["page"] == "questionnaire":
+    questionnaire()
