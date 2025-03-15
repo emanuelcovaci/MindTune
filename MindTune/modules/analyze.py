@@ -51,7 +51,6 @@ def show_analyze():
 
     st.markdown(video_html, unsafe_allow_html=True)
 
-
     if "read_bci" not in st.session_state:
         st.session_state["read_bci"] = 0
         # model = init_model()
@@ -64,6 +63,6 @@ def show_analyze():
         # print(f'ST prediction: {st.session_state.prediction}')
         st.write('Brain Waves recorded. Let\'s see the results!')
 
-    #if st.session_state.prediction > -1:
-    if st.button("Run the analysis"):
-         st.session_state["page"] = "result_analyze"
+    if st.session_state.prediction > -1:
+        if st.button("Run the analysis"):
+            st.session_state["page"] = "result_analyze"

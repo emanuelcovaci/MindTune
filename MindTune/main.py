@@ -1,5 +1,6 @@
 from modules.analyze import show_analyze
 from modules.home import show_home
+from modules.loading_page import show_loading_page
 from modules.result_analyze import show_result_analyze
 from modules.state_detection import show_state_detection
 from modules.about_us import show_about_us
@@ -161,6 +162,8 @@ elif st.session_state["page"] == "state_detection":
     show_state_detection()
 elif st.session_state["page"] == "about_us":
     show_about_us()
+elif st.session_state["page"] == "loading_page":
+    show_loading_page()
 elif st.session_state["page"] == "analyze":
     show_analyze()
 elif st.session_state["page"] == "result_analyze":
