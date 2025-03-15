@@ -248,8 +248,7 @@ def record_data(inlet, duration=5):
     return data_df
 
 
-def init_model():
-    model_save_path = "model/BCI_classifier_2.pth"
-    loaded_model = load_model(input_size=64, model_path=model_save_path)
+def init_model(model_path="model/model_transformer.pth", model_type="transformer"):
+    loaded_model = load_model(input_size=64, model_path=model_path, model_type=model_type)
 
     return loaded_model
