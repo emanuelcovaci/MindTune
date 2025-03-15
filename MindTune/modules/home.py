@@ -375,5 +375,5 @@ def show_home():
 
         with st.markdown('<div class="custom-start-button">', unsafe_allow_html=True):
             if st.button("Start"):
-                st.session_state["page"] = "analyze"
+                st.session_state["page"] = "loading_page"
         st.markdown('</div>', unsafe_allow_html=True)
