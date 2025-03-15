@@ -13,14 +13,14 @@ def show_result_analyze():
             <style>
             .title {
                 color: white;
-                font-size: 1.5em;
+                font-size: 1em;
                 text-align: center;
                 animation: pulse 2s infinite;
             }
             
             .result {
                 color: white;
-                font-size: 2.5em;
+                font-size: 1.5em;
                 font-weight: bold;
                 text-align: center;
                 animation: pulse 2s infinite;
@@ -61,14 +61,14 @@ def show_result_analyze():
             <style>
             .title {
                 color: white; 
-                font-size: 1.5em;
+                font-size: 1em;
                 text-align: center;
                 animation: pulse 2s infinite; 
             }
             
             .result {
                 color: white;
-                font-size: 2.5em;
+                font-size: 1.5em;
                 font-weight: bold;
                 text-align: center;
                 animation: pulse 2s infinite;
@@ -108,5 +108,29 @@ def show_result_analyze():
                     unsafe_allow_html=True
                 )
 
-    if st.button("📊 Let's start a survey"):
-        st.session_state["page"] = "questionnaire"
+    st.markdown(
+        """
+        <style>
+        /* Default button styling */
+        div.stButton > button {
+            border: 2px solid #5FA8D3 !important;
+            border-radius: 8px;
+            padding: 10px;
+            font-size: 16px;
+            transition: 0.3s ease-in-out;
+        }
+
+        div.stButton > button:after {
+            content: attr(data-text);
+            display: inline-block;
+            visibility: hidden;
+            height: 0;
+        }
+        </style>
+        """,
+        unsafe_allow_html=True
+    )
+
+    button_clicked = st.button("📊 Let's start a survey")
+    if button_clicked:
+            st.session_state["page"] = "questionnaire"

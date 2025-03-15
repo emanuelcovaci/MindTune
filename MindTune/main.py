@@ -6,7 +6,6 @@ from modules.state_detection import show_state_detection
 from modules.about_us import show_about_us
 
 import streamlit as st
-#from predict_api import *
 
 if 'prediction' not in st.session_state:
     st.session_state.prediction = -1
@@ -142,17 +141,40 @@ st.markdown(
     unsafe_allow_html=True
 )
 
+st.markdown(
+        """
+        <style>
+        /* Default button styling */
+        div.stButton > button {
+            border: 2px solid #5FA8D3 !important;
+            border-radius: 8px;
+            padding: 10px;
+            font-size: 16px;
+            transition: 0.3s ease-in-out;
+        }
+
+        div.stButton > button:after {
+            content: attr(data-text);
+            display: inline-block;
+            visibility: hidden;
+            height: 0;
+        }
+        </style>
+        """,
+        unsafe_allow_html=True
+    )
+
 if 'page' not in st.session_state:
     st.session_state.page = 'home'
 
 st.session_state.previous_page = st.session_state.page
 
 st.sidebar.markdown("<h1 style='text-align: center;'>🌠 Navigation</h1>", unsafe_allow_html=True)
-if st.sidebar.button("🛸 Home"):
+if st.sidebar.button("🛸 NeuroSurvey"):
     st.session_state.page = "home"
-if st.sidebar.button("👽 State Detection"):
+if st.sidebar.button("🔬 State Detection"):
     st.session_state.page = "state_detection"
-if st.sidebar.button("🧑‍🤝‍🧑 About Us"):
+if st.sidebar.button("👨‍💻 About Us"):
     st.session_state.page = "about_us"
 
 

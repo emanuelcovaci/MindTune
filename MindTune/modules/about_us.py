@@ -1,138 +1,76 @@
 import streamlit as st
 
 def show_about_us():
-    st.markdown(
+    st.write(
         """
         <style>
-        .stApp {
-            background-color: black !important;
-            color: white !important;
+        .title { 
+            font-size: 1.7em; 
+            font-weight: bold; 
+            text-align: center; 
+            margin-bottom: 25px; 
         }
-
-        div[data-testid="stAppViewContainer"] h1 {
-            color: white !important;
+        .centered-subtitle { 
+            font-size: 1.1em; 
+            font-weight: bold; 
+            text-align: center; 
+            margin-top: 20px; 
         }
-
-        .css-1d391kg, .css-1d391kg * {
-            background-color: black !important;
-            color: white !important;
+        .text { 
+            font-size: 0.875em; 
+            line-height: 1.5; 
         }
-
-        .speech-bubble-left {
-            background-color: #f0f0f0;
-            border-radius: 15px;
-            padding: 10px 15px;
-            font-size: 16px;
-            max-width: 80%;
-            color: black;
-            position: relative;
-            display: inline-block;
+        .bold { 
+            font-weight: bold; 
         }
-        .speech-bubble-left::after {
-            content: '';
-            position: absolute;
-            left: -10px;
-            top: 15px;
-            border-width: 10px;
-            border-style: solid;
-            border-color: transparent #f0f0f0 transparent transparent;
+        .call-to-action { 
+            font-size: 1em; 
+            text-align: center; 
+            padding: 15px; 
         }
-        .speech-bubble-right {
-            background-color: #e0eaff;
-            border-radius: 15px;
-            padding: 10px 15px;
-            font-size: 16px;
-            max-width: 80%;
-            color: black;
-            position: relative;
-            display: inline-block;
+        .divider { 
+            border-top: 1px solid #ccc; 
+            margin: 15px 0; 
         }
-        .speech-bubble-right::after {
-            content: '';
-            position: absolute;
-            right: -10px;
-            top: 15px;
-            border-width: 10px;
-            border-style: solid;
-            border-color: transparent transparent transparent #e0eaff;
-        }
-
-        .user-input-bubble {
-            background-color: #cce5ff;
-            border-radius: 15px;
-            padding: 10px 15px;
-            font-size: 16px;
-            max-width: 60%;
-            color: black;
-            display: inline-block;
-            margin-top: 10px;
-            border: 1px solid #99ccff;
-            position: relative;
-            float: right;
-            text-align: right;
-        }
-        .user-input-bubble::before {
-            content: '';
-            position: absolute;
-            right: -10px;
-            top: 15px;
-            border-width: 10px;
-            border-style: solid;
-            border-color: transparent transparent transparent #cce5ff;
-        }
-
-        .custom-input-container {
-            background-color: #cce5ff;
-            border: 1px solid #99ccff;
-            border-radius: 15px;
-            padding: 10px;
-            max-width: 60%;
-            margin-top: 10px;
-            text-align: right;
-            float: right;
-        }
-        .custom-input-container input[type="text"] {
-            border: none;
-            background-color: #cce5ff;
-            color: black;
-            padding: 8px;
-            border-radius: 10px;
-            width: 90%;
-            text-align: right;
-        }
-
-        .stButton>button {
-            width: 100%;
-            text-align: left;
-            background-color: transparent; 
-            color: white;
-            border-radius: 5px;
-            border: none;
-            padding: 10px;
-            font-size: 16px;
-            font-weight: normal;
-        }
-        .stButton>button:hover {
-            background-color: #89CFF0; 
-            color: white;
-            font-weight: bold;
-        }
-
         </style>
+
+        <div class="title">🤖 Meet the Team Behind the Innovation</div>
+
+        <div class="centered-subtitle">🚀 Who We Are</div>
+        <div class="text">
+            We are a passionate team from <span class="bold">Timișoara</span>, united by a shared mission: 
+            <span class="bold">to explore, develop, and innovate</span> in the world of AI.  
+            From a spark of an idea to fully realized projects, we are committed to crafting solutions that make a real-world impact.
+        </div>
+
+        <div class="divider"></div>
+
+        <div class="centered-subtitle">💡 Our Vision</div>
+        <div class="text">
+            Our journey is fueled by <span class="bold">creativity, resilience, and curiosity</span>.  
+            Each project starts with an <span class="bold">ambition to solve complex challenges</span>,  
+            and through teamwork and dedication, we turn ideas into tangible, high-quality results.
+        </div>
+
+        <div class="divider"></div>
+
+        <div class="centered-subtitle">🌍 Our Impact</div>
+        <div class="text">
+            We believe AI has the power to <span class="bold">transform lives</span> and shape the future for the better.  
+            With every project, we strive to bridge the gap between <span class="bold">imagination and reality</span>,  
+            ensuring that technology serves a greater purpose.
+        </div>
+
+        <div class="divider"></div>
+
+        <div class="centered-subtitle">🤝 Join Us on Our Journey</div>
+        <div class="text">
+            We are more than just a team—we are a <span class="bold">community</span>.  
+            Constantly learning, growing, and pushing boundaries, we are ready to tackle the next big idea.  
+            <span class="bold">Let’s innovate together!</span>
+        </div>
+
+        <div class="call-to-action"><span class="bold">✨ Ready to be part of the future of AI? ✨</span></div>
         """,
         unsafe_allow_html=True
     )
-
-    st.title("About Us")
-    st.write("""
-            👋 We are a passionate team from Timișoara, driven to explore, develop, and innovate in the fascinating world of AI. 
-            🌱 From a spark of an idea to a fully-realized project, we’re committed to crafting solutions that are as close to real-world impact as possible.
-
-            💡 Our journey is fueled by creativity, resilience, and a deep-seated curiosity to see how far we can push the boundaries of technology. 
-            Each project starts with the ambition to solve complex challenges, and through teamwork and dedication, we turn those ideas into tangible, high-quality results.
-
-            🌍 With every new project, we strive to make a meaningful difference, bridging the gap between imagination and reality. 
-            We believe that AI, driven by purpose and innovation, has the power to transform lives and shape the future for the better.
-
-            🤝 Together, we’re more than just a team—we’re a community, constantly learning and growing, ready to tackle the next big idea and bring it to life. Join us on our journey to create, innovate, and make an impact!
-        """)

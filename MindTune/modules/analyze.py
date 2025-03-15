@@ -1,6 +1,7 @@
 import base64
 
 import streamlit as st
+#from predict_api import *
 
 def show_analyze():
     video_path = "media/video.mp4"
@@ -53,16 +54,18 @@ def show_analyze():
 
     if "read_bci" not in st.session_state:
         st.session_state["read_bci"] = 0
-        # model = init_model()
+        # model = init_model(model_path="models_saved/model_simple.pth", model_type="simple")
         # streams = resolve_stream()
         # inlet = StreamInlet(streams[0])
         # user = record_data(inlet, 5)
         # user_raw = preporcess_data(user)
         # predicted_class = predict(model, user_raw)
+        # st.session_state.prediction = predicted_class
+
         st.session_state.prediction = 1
-        # print(f'ST prediction: {st.session_state.prediction}')
-        st.write('Brain Waves recorded. Let\'s see the results!')
+
+        print(f'ST prediction: {st.session_state.prediction}')
 
     if st.session_state.prediction > -1:
-        if st.button("Run the analysis"):
+        if st.button("Let\'s see the results!"):
             st.session_state["page"] = "result_analyze"
