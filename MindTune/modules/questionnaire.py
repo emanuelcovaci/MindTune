@@ -4,7 +4,6 @@ import streamlit as st
 from langchain_core.prompts import PromptTemplate
 from langchain_core.output_parsers import StrOutputParser
 
-# Model and API token setup
 model_id = "mistralai/Mistral-7B-Instruct-v0.3"
 
 try:

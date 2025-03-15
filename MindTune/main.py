@@ -1,3 +1,5 @@
+import base64
+
 from modules.analyze import show_analyze
 from modules.home import show_home
 from modules.loading_page import show_loading_page
@@ -145,7 +147,6 @@ st.markdown(
 st.markdown(
         """
         <style>
-        /* Default button styling */
         div.stButton > button {
             border: 2px solid #5FA8D3 !important;
             border-radius: 8px;
@@ -160,15 +161,52 @@ st.markdown(
             visibility: hidden;
             height: 0;
         }
+        
+        .sidebar-image-container {
+        background-color: #261741;
+        bottom: 1000px; 
+        text-align: center;
+        }
+        
+
+    .sidebar-image-container img {
+        width: 40%;
+        border-radius: 5px;
+    }
+        
+        [data-testid="stSidebar"] {
+        background: #000000 !important; 
+        padding-top: 20px;
+        padding-bottom: 20px;
+        }
         </style>
         """,
         unsafe_allow_html=True
     )
 
+background_image_path = "media/background.jpg"
+
+with open(background_image_path, "rb") as img_file:
+    background_image_base64 = base64.b64encode(img_file.read()).decode()
+
+st.markdown(
+    f"""
+    <style>
+    .stApp {{
+        background: url("data:image/jpg;base64,{background_image_base64}") no-repeat center center fixed;
+        background-size: cover;
+    }}
+
+    </style>
+    """,
+    unsafe_allow_html=True
+)
+
 if 'page' not in st.session_state:
     st.session_state.page = 'home'
 
 st.session_state.previous_page = st.session_state.page
+image_path = "media/itfest.jpg"
 
 st.sidebar.markdown("<h1 style='text-align: center;'>🌠 Navigation</h1>", unsafe_allow_html=True)
 if st.sidebar.button("🛸 NeuroSurvey"):
@@ -177,6 +215,16 @@ if st.sidebar.button("🔬 State Detection"):
     st.session_state.page = "state_detection"
 if st.sidebar.button("👨‍💻 About Us"):
     st.session_state.page = "about_us"
+
+st.sidebar.markdown(
+    f"""
+    <div class="sidebar-image-container">
+        <img src="data:image/png;base64,{base64.b64encode(open(image_path, "rb").read()).decode()}" 
+        width="350" alt="Sidebar Image">
+    </div>
+    """,
+    unsafe_allow_html=True
+)
 
 
 if st.session_state["page"] == "home":
